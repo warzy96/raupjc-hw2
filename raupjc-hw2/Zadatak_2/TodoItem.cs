@@ -8,7 +8,7 @@ namespace Zadatak_2
 {
     public class TodoItem
     {
-        public Guid Id { get; } //GetHashCode() se treba pozivati nad varijablom koja je read-only
+        public Guid Id { get; set; } 
         public string Text { get; set; }
 
         public bool IsCompleted => DateCompleted.HasValue;

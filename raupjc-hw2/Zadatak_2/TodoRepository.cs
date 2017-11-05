@@ -18,11 +18,7 @@ namespace Zadatak_2
             _inMemoryTodoDatabase = initialDbState ?? new GenericList<TodoItem>();
         }
 
-        public TodoItem Get(Guid todoId)
-        {
-            return _inMemoryTodoDatabase.FirstOrDefault(s => s.Id == todoId);
-        }
-
+        public TodoItem Get(Guid todoId) =>_inMemoryTodoDatabase.FirstOrDefault(s => s.Id == todoId);
         public TodoItem Add(TodoItem todoItem)
         {
             if (_inMemoryTodoDatabase.Contains(todoItem))
@@ -31,10 +27,8 @@ namespace Zadatak_2
             return todoItem;
         }
 
-        public bool Remove(Guid todoId)
-        {
-            return _inMemoryTodoDatabase.Remove(Get(todoId));
-        }
+        public bool Remove(Guid todoId) =>
+            _inMemoryTodoDatabase.Remove(Get(todoId));
 
         public TodoItem Update(TodoItem todoItem)
         {

@@ -53,17 +53,25 @@
         <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TodoItemTests.cs" />
+    <Compile Include="TodoRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\source\repos\raupjc-hw1\Zadatak_3\DZ1_Zadatak_3.csproj">
+      <Project>{406ca845-5570-4b25-b3f9-282ed2d60c2a}</Project>
+      <Name>DZ1_Zadatak_3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zadatak_2\Zadatak_2.csproj">
+      <Project>{F0B6E0E2-7653-4029-B4F1-102B4ADAFB1A}</Project>
+      <Name>Zadatak_2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
