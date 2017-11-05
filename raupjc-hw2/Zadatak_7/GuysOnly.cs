@@ -8,22 +8,23 @@ namespace Zadatak_7
 {
     public class GuysOnly
     {
-        private static void LetsSayUserClickedAButtonOnGuiMethod()
+        private static async Task LetsSayUserClickedAButtonOnGuiMethod()
         {
-            var result = GetTheMagicNumber();
+            var result = await GetTheMagicNumber();
             Console.WriteLine(result);
         }
-        private static int GetTheMagicNumber()
+        private static async Task<int> GetTheMagicNumber()
         {
-            return IKnowIGuyWhoKnowsAGuy();
+            return await IKnowIGuyWhoKnowsAGuy();
         }
-        private static int IKnowIGuyWhoKnowsAGuy()
+        private static async Task<int> IKnowIGuyWhoKnowsAGuy()
         {
-            return await IKnowWhoKnowsThis(10) + IKnowWhoKnowsThis(5);
+            return await IKnowWhoKnowsThis(10) + await IKnowWhoKnowsThis(5);
         }
         private static async Task<int> IKnowWhoKnowsThis(int n)
         {
-            return FactorialCalculator.FactorialDigitSumAsync(n).Result;
-        }
+            return await FactorialCalculator.FactorialDigitSumAsync(n);
+        }
+
     }
 }

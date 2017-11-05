@@ -16,8 +16,7 @@ namespace Zadatak_4
             .ToArray();
 
         public static University[] Linq2_1(University[] universityArray) =>
-            universityArray.Where(s => s.Students.Count(e => e.Gender.Equals(Gender.Male)).Equals(s.Students.Length))
-                .ToArray();
+            universityArray.Where(s => s.Students.Count(e => e.Gender.Equals(Gender.Male)).Equals(s.Students.Length)).ToArray();
 
         public static University[] Linq2_2(University[] universityArray) =>
             universityArray.Where(u => u.Students.Length < universityArray.Average(s => s.Students.Length)).ToArray();
