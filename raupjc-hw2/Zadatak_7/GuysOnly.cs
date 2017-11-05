@@ -8,7 +8,7 @@ namespace Zadatak_7
 {
     public class GuysOnly
     {
-        private static async Task LetsSayUserClickedAButtonOnGuiMethod()
+        public static async Task LetsSayUserClickedAButtonOnGuiMethod()
         {
             var result = await GetTheMagicNumber();
             Console.WriteLine(result);

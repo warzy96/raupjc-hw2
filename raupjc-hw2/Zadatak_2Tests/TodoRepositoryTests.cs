@@ -67,16 +67,8 @@ namespace Zadatak_2Tests
             list.Add(itemA);
             list.Add(itemB);
             TodoRepository repository = new TodoRepository(list);
-            Assert.IsTrue(itemA.Equals(repository.GetAll().First()));
 
-            foreach (TodoItem item in repository.GetAll())
-            {
-                if(item.Text.Equals("a"))
-                    Assert.AreEqual(item, itemA);
-                if (item.Text.Equals("b"))
-                    Assert.AreEqual(item, itemB);
-            }
-
+            CollectionAssert.AreEqual(list.ToList(), repository.GetAll());
         }
 
         [TestMethod()]
